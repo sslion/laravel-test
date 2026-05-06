@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест фильтрации полей</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 600px; 
+            margin: 50px auto; 
+            padding: 20px;
+        }
+        .form-group { 
+            margin: 15px 0; 
+            padding: 10px; 
+            border: 1px solid #ddd; 
+            border-radius: 5px;
+        }
+        label { 
+            display: block; 
+            margin-bottom: 5px; 
+            font-weight: bold; 
+        }
+        input, select { 
+            width: 100%; 
+            padding: 8px 0; 
+        }
+        select { 
+            width: 30%; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Тестовая форма</h1>
+    
+    <div class="form-group">
+        <label>Тип данных:</label>
+        <select id="typeSelect">
+            <option value="">Все типы</option>
+            <option value="programming">Programming</option>
+            <option value="general">General</option>
+            <option value="knock-knock">Knock-knock</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Programming поле 1:</label>
+        <input type="text" name="programming_field1" placeholder="Programming">
+    </div>
+
+    <div class="form-group">
+        <label>Programming поле 2:</label>
+        <input type="text" name="programming_field2" placeholder="Another programming">
+    </div>
+
+    <div class="form-group">
+        <label>General поле:</label>
+        <input type="text" name="general_field" placeholder="General">
+    </div>
+
+    <div class="form-group">
+        <label>Общее поле (видно всегда):</label>
+        <input type="text" name="common" placeholder="Common field">
+    </div>
+
+    <div class="form-group">
+        <label>Knock-knock поле:</label>
+        <textarea name="knock_knock_text" placeholder="Knock knock..."></textarea>
+    </div>
+
+    <script src="/js/field-filter.js"></script>
+</body>
+</html>

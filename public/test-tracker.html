@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестовая страница для трекера</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .card {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Тестовая страница</h1>
+    
+    <div class="card">
+        <h2>Счетчик посещений</h2>
+        <p>Эта страница используется для тестирования трекера посещений.</p>
+        <p>При загрузке страницы данные отправляются на сервер.</p>
+        <button onclick="location.reload()">Обновить страницу (новое посещение)</button>
+    </div>
+    
+    <div class="card">
+        <h2>Информация о системе</h2>
+        <p id="deviceInfo"></p>
+        <p id="browserInfo"></p>
+        <p id="screenInfo"></p>
+    </div>
+    
+    <div class="card">
+        <a href="/stats">Перейти к статистике (логин: admin, пароль: secret123)</a>
+    </div>
+
+    <script>
+        // Показываем информацию об устройстве
+        document.getElementById('deviceInfo').textContent = 
+            'Устройство: ' + navigator.userAgent;
+        document.getElementById('browserInfo').textContent = 
+            'Браузер: ' + navigator.appName;
+        document.getElementById('screenInfo').textContent = 
+            'Разрешение: ' + screen.width + 'x' + screen.height;
+    </script>
+    
+    <!-- Подключаем трекер -->
+    <script src="/js/visit-tracker.js"></script>
+</body>
+</html>
